@@ -7,11 +7,11 @@ const NavigationBar = () => {
     <Grid container>
       <Grid item xs={4} />
       <Grid item xs={2}>
-        <CustomButton name="Universities" />
+        <CustomButton name="Universities" color = "success" variant = "contained" size = "large"/>
       </Grid>
 
       <Grid item xs={2}>
-        <CustomButton name="Postal lookup" />
+        <CustomButton name="Postal lookup" color = "success" variant = "contained" size = "large"/>
       </Grid>
       <Grid item xs={4} />
     </Grid>

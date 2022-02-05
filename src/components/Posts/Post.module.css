@@ -1,0 +1,54 @@
+.post {
+    margin: 1rem 0;
+    background-color: lightgray;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  
+  .post h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+  }
+  
+  .post header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  
+  .body {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+  }
+  
+  .body span {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  
+  .id {
+    font-size: 1;
+    font-weight:bold;
+    
+  }
+   
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.5rem 0;
+  }
+  
+  .actions button {
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: 0.5rem;
+    padding: 0.15rem 1rem;
+    color: white;
+  }
+  
+  .actions button:hover,
+  .actions button:active {
+    background-color: #4b4b4b;
+    color: white;
+  }

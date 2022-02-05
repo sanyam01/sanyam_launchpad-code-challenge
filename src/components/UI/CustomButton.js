@@ -2,7 +2,7 @@ import Button from "@mui/material/Button";
 
 const CustomButton = (props) => {
   return (
-    <Button color="success" variant="contained" size="large">
+    <Button color={props.color} variant={props.variant} size={props.size}>
       {props.name}
     </Button>
   );
