@@ -3,13 +3,11 @@ import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
 
-const PostHeader = () => {
-  const addPostHandler = () => {
-    console.log("This has been clicked");
-  };
+const PostHeader = (props) => {
+  
 
   return (
-    <Grid container xs={12}>
+    <Grid container>
       <Grid item xs={4}>
         <Typography variant="h4"> Posts </Typography>
       </Grid>
@@ -20,7 +18,7 @@ const PostHeader = () => {
           color="secondary"
           variant="contained"
           size="medium"
-          onClick={addPostHandler}
+          onClick={props.onAddPost}
         >
           {" "}
           Add Post{" "}

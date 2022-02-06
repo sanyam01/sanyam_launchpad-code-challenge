@@ -1,19 +1,34 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { postActions } from "../../store/post-slice";
+import { deletePost } from "../../store/post-actions";
 import classes from "./Post.module.css";
 import PostEditPanel from "./PostEditPanel";
+import { useDispatch } from "react-redux";
+import { addPostActions } from "../../store/addPost-slice";
 
 const Post = (props) => {
-  const dispatch = useDispatch();
+ 
 
   const { id, title, body, userId } = props.post;
 
-  const removePostHandler = () => {};
+  const dispatch = useDispatch();
 
-  const addPostHandler = () => {};
+  const deletePostHandler = () => {
+    dispatch(deletePost(id));
 
-  const editPostHandler = () => {};
+  };
+
+  const editPostHandler = () => {
+      
+    dispatch(
+      addPostActions.changeEditState({
+        postState: true,
+        idState: id,
+        titleState: title,
+        bodyState :body,
+        userIdState: userId,
+      })
+    );
+  };
 
   return (
     <li className={classes.post}>
@@ -30,7 +45,7 @@ const Post = (props) => {
           <span>{body}</span>
         </div>
       </div>
-      <PostEditPanel />
+      <PostEditPanel onDeleteHandler = {deletePostHandler} onEditHandler = {editPostHandler}/>
     </li>
   );
 };

@@ -11,13 +11,17 @@ function App() {
 
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
+  const addPostState = useSelector((state) => state.addPosts.addPostState);
+  const editPostState = useSelector((state) => state.addPosts.editPostState);
 
   console.log("I am in the start of application");
 
   useEffect(() => {
     
-    dispatch(fetchPostData());
-  }, [dispatch]);
+    dispatch(fetchPostData(null));
+  }, [dispatch, addPostState, editPostState]);
+
+  useEffect(()=>{},[addPostState, editPostState]);
 
   useEffect(() => {
     if (isInitial) {
