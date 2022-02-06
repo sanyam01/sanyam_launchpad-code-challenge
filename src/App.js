@@ -1,23 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./components/Pages/Home/Home";
+import { Route, Routes } from "react-router-dom";
+import { fetchPostData } from "../src/store/post-actions";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+
+let isInitial = true;
 
 function App() {
+
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.posts);
+  const addPostState = useSelector((state) => state.addPosts.addPostState);
+  const editPostState = useSelector((state) => state.addPosts.editPostState);
+
+  console.log("I am in the start of application");
+
+  useEffect(() => {
+    
+    dispatch(fetchPostData(null));
+  }, [dispatch, addPostState, editPostState]);
+
+  useEffect(()=>{},[addPostState, editPostState]);
+
+  useEffect(() => {
+    if (isInitial) {
+      isInitial = false;
+      return;
+    }
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Home />
+      {/* <Routes>
+          <Route path = "home">
+            <Home/>
+          </Route>
+
+          <Route path = "/universities">
+            <p> This is the university page</p>
+          </Route>
+
+          <Route path = "/postalCodes">
+            <p> This is the postal code page</p>
+          </Route>
+
+        </Routes> */}
     </div>
   );
 }
