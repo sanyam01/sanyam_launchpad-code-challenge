@@ -11,7 +11,7 @@ const postSlice = createSlice({
 
   reducers: {
     replaceCart(state, action){
-      console.log("I am inside the replacecart");
+
       state.posts = action.payload.posts;
       state.totalPosts = action.payload.totalPosts;
       state.changed = true;

@@ -14,7 +14,6 @@ const addPostSlice = createSlice({
 
   reducers: {
     changePostState(state, action){
-      console.log("I am inside the changePostState");
       state.addPostState = action.payload.postState;
       
     },
@@ -26,7 +25,6 @@ const addPostSlice = createSlice({
         state.editPostTitle = action.payload.titleState;
         state.editPostBody = action.payload.bodyState;
         state.editPostUserId = action.payload.userIdState;
-        console.log("Value of posts is " + action.payload.editState);
     }
 
 

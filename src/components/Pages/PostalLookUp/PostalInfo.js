@@ -11,7 +11,7 @@ const PostalInfo = () => {
       <h3> Area information</h3>
 
       <Card>
-        <p className={ classes.post}> {JSON.stringify(postalData)}</p>
+        <p className={classes.post}> {JSON.stringify(postalData)}</p>
       </Card>
     </Fragment>
   );

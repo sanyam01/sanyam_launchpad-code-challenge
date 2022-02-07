@@ -11,47 +11,37 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
 const AddPostLayout = (props) => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  const titleRef = useRef("");
+  const idRef = useRef("");
+  const bodyRef = useRef("");
+  const editStateValue = useSelector((state) => state.addPosts.editPostState);
+  const userIdValue = useSelector((state) => state.addPosts.editPostUserId);
 
-    const titleRef = useRef("");
-    const idRef = useRef("");
-    const bodyRef = useRef("");
-    const editStateValue = useSelector((state) => state.addPosts.editPostState);
-    const userIdValue = useSelector((state) => state.addPosts.editPostUserId);
+  const postInfo = {
+    title: titleRef.current.value,
+    id: idRef.current.value,
+    body: bodyRef.current.value,
+  };
 
-    const postInfo = {
+  const editInfo = {
+    userId: userIdValue,
+    title: titleRef.current.value,
+    id: idRef.current.value,
+    body: bodyRef.current.value,
+  };
 
-        title: titleRef.current.value,
-        id: idRef.current.value,
-        body: bodyRef.current.value,
-      };
-
-      const editInfo = {
-        userId: userIdValue,
-        title: titleRef.current.value,
-        id: idRef.current.value,
-        body: bodyRef.current.value, 
-        
-      };
-    
-      const onClickHandler = (props) => {
-
-        if(editStateValue){
-            console.log("I am here asking to submit the edit info in AddPostLayout");
-            console.log("The values of editInfo is " + Object.values(editInfo));
-            dispatch(editPostData(editInfo));
-        }
-        else{
-            dispatch(sendPostData(postInfo));
-            console.log("I am here asking to submit the newnnnn AddPostLayout");
-        }
-
-           
-      };
+  const onClickHandler = (props) => {
+    if (editStateValue) {
+      dispatch(editPostData(editInfo));
+    } else {
+      dispatch(sendPostData(postInfo));
+    }
+  };
 
   return (
-    <div className={classes.backdrop} >
+    <div className={classes.backdrop}>
       <Card className={classes.modal}>
         <Grid container rowSpacing={2}>
           <Typography variant="h4"> Add a new post</Typography>
@@ -61,7 +51,7 @@ const AddPostLayout = (props) => {
             <Typography variant="h6"> UserId :</Typography>
           </Grid>
           <Grid item xs={8}>
-            <TextField inputRef={idRef} defaultValue = {props.id}/>
+            <TextField inputRef={idRef} defaultValue={props.id} />
           </Grid>
 
           <Grid item xs={4}>
@@ -69,18 +59,20 @@ const AddPostLayout = (props) => {
           </Grid>
 
           <Grid item xs={8}>
-            <TextField inputRef={titleRef} defaultValue = {props.title}/>
+            <TextField inputRef={titleRef} defaultValue={props.title} />
           </Grid>
           <Grid item xs={4}>
             <Typography variant="h6">Body :</Typography>
           </Grid>
 
           <Grid item xs={8}>
-            <TextField inputRef={bodyRef} defaultValue = {props.body}/>
+            <TextField inputRef={bodyRef} defaultValue={props.body} />
           </Grid>
 
           <Grid item xs={12}>
-            <Button variant="contained" onClick={onClickHandler}>{props.name}</Button>
+            <Button variant="contained" onClick={onClickHandler}>
+              {props.name}
+            </Button>
           </Grid>
         </Grid>
       </Card>

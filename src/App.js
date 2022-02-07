@@ -16,11 +16,9 @@ function App() {
   const addPostState = useSelector((state) => state.addPosts.addPostState);
   const editPostState = useSelector((state) => state.addPosts.editPostState);
 
-  console.log("I am in the start of application");
-
   useEffect(() => {
     dispatch(fetchPostData(null));
-  }, [dispatch,addPostState,editPostState]);
+  }, [dispatch, addPostState, editPostState]);
 
   useEffect(() => {}, [addPostState, editPostState]);
 
@@ -36,8 +34,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/Universities" element={<Universities />} />
-          <Route path="/PostalLookUp" element={<PostalLookUp/>} />
-
+          <Route path="/PostalLookUp" element={<PostalLookUp />} />
 
           <Route path="/" element={<Home />} />
         </Routes>

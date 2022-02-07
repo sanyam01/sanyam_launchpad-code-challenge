@@ -1,4 +1,4 @@
-import { Fragment , useRef} from "react";
+import { Fragment, useRef } from "react";
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import { fetchPostalData } from "../../../store/postal-actions";
 import { useDispatch } from "react-redux";
@@ -12,12 +12,7 @@ const PostalLookUp = (props) => {
   const displayState = useSelector((state) => state.postal.postalCode);
 
   const postalHandler = (props) => {
-      console.log(JSON.stringify(postalRef.current.value));
-    dispatch(
-      fetchPostalData(
-        postalRef.current.value
-      )
-    );
+    dispatch(fetchPostalData(postalRef.current.value));
   };
 
   return (

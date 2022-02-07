@@ -1,11 +1,8 @@
 import { FormControl } from "@mui/material";
 import { InputLabel } from "@mui/material";
-
 import { Select } from "@mui/material";
 import { MenuItem } from "@mui/material";
-
 import { useSelector } from "react-redux";
-
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import React from "react";
@@ -22,7 +19,7 @@ const SelectComponent = () => {
     (state) => state.universities.countrySearchName
   );
   const countriesListUnique = [...new Set(countriesList)];
-  console.log("Current input values is " + inputValue);
+ 
 
   const handleChange = () => {
     console.log("I am inside handle change");
@@ -45,7 +42,7 @@ const SelectComponent = () => {
         renderInput={(params) => <TextField {...params} label="Country" />}
       />
 
-      {inputValue && <UniversityLayout/>}
+      {inputValue && <UniversityLayout />}
     </div>
   );
 };

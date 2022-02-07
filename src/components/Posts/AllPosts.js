@@ -7,7 +7,6 @@ const AllPosts = (props) => {
   const posts = useSelector((state) => state.posts.posts);
   const hasPosts = useSelector((state) => state.posts.changed);
 
-  console.log("Value of hasChange is " + hasPosts);
 
   if (hasPosts) {
     return (

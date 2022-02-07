@@ -14,10 +14,9 @@ const PostsLayout = () => {
   const posts = useSelector((state) => state.posts.posts);
   const addPosts = useSelector((state) => state.addPosts.addPostState);
   const editPosts = useSelector((state) => state.addPosts.editPostState);
-  const editId =  useSelector((state) => state.addPosts.editPostId);
-  const editTitle =  useSelector((state) => state.addPosts.editPostTitle);
-  const editBody =  useSelector((state) => state.addPosts.editPostBody);
-
+  const editId = useSelector((state) => state.addPosts.editPostId);
+  const editTitle = useSelector((state) => state.addPosts.editPostTitle);
+  const editBody = useSelector((state) => state.addPosts.editPostBody);
 
   const dispatch = useDispatch();
 
@@ -30,10 +29,8 @@ const PostsLayout = () => {
   };
 
   const closeEditHandler = () => {
-    console.log("I am inside closeEditHandler");
     dispatch(
       addPostActions.changeEditState({
-          
         editState: false,
         idState: null,
         titleState: null,
@@ -41,10 +38,8 @@ const PostsLayout = () => {
       })
     );
   };
-  console.log("Value of prop edit state is" + editPosts);
-  return (
 
-   
+  return (
     <div>
       {addPosts && (
         <AddPostLayout
@@ -59,7 +54,7 @@ const PostsLayout = () => {
         <AddPostLayout
           onClose={closeEditHandler}
           name="Edit Post"
-          body= {editBody}
+          body={editBody}
           title={editTitle}
           id={editId}
         />

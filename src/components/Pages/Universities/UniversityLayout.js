@@ -5,8 +5,6 @@ import Card from "../Layout/Card";
 
 const UniversityLayout = () => {
   const data = useSelector((state) => state.universities.countryData);
-  console.log("I am inside the university layput");
-  console.log(data);
   return (
     <Fragment>
       <h3>This is the university layout</h3>

@@ -5,18 +5,13 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 
 const SearchBar = (props) => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
+  const searchIdRef = useRef("");
 
-    const searchIdRef = useRef("");
-
-    const searchHandler = (id) => {
-        dispatch(
-            fetchPostData(searchIdRef.current.value)
-        );
-
-
-    };
+  const searchHandler = (id) => {
+    dispatch(fetchPostData(searchIdRef.current.value));
+  };
   return (
     <Grid container spacing={2}>
       <Grid item xs={12} />
@@ -24,16 +19,23 @@ const SearchBar = (props) => {
 
       <Grid item xs={3} />
       <Grid item xs={2}>
-        <Typography variant="h4" >Search by Id</Typography>
+        <Typography variant="h4">Search by Id</Typography>
       </Grid>
 
       <Grid item xs={2}>
-        <TextField inputRef={searchIdRef}/>
+        <TextField inputRef={searchIdRef} />
       </Grid>
 
-      <Grid item xs = {2}>
-          <Button variant="contained" size="large" color = "primary" onClick = {searchHandler}> Search</Button>
-
+      <Grid item xs={2}>
+        <Button
+          variant="contained"
+          size="large"
+          color="primary"
+          onClick={searchHandler}
+        >
+          {" "}
+          Search
+        </Button>
       </Grid>
     </Grid>
   );
