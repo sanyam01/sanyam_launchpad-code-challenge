@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import  { Fragment } from "react";
 import NavigationBar from "./NavigationBar";
 import PostsLayout from "./PostsLayout";
 import SearchBar from "./SearchBar";
