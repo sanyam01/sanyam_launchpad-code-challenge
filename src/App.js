@@ -6,6 +6,7 @@ import { fetchPostData } from "../src/store/post-actions";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import Universities from "./components/Pages/Universities/Universities";
+import PostalLookUp from "./components/Pages/PostalLookUp/PostalLookUp";
 
 let isInitial = true;
 
@@ -35,6 +36,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/Universities" element={<Universities />} />
+          <Route path="/PostalLookUp" element={<PostalLookUp/>} />
+
 
           <Route path="/" element={<Home />} />
         </Routes>
