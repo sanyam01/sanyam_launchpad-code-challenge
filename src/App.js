@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchPostData(null));
-  }, [dispatch]);
+  }, [dispatch,addPostState,editPostState]);
 
   useEffect(() => {}, [addPostState, editPostState]);
 

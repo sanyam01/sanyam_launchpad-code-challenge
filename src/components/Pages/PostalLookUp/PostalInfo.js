@@ -9,7 +9,11 @@ const PostalInfo = () => {
     return (
         <Fragment>
             <p> This is the place for displaying the information</p>
+           
+
+            
             <p> {JSON.stringify(postalData)}</p>
+           
         </Fragment>
 
     );

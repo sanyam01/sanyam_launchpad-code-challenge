@@ -92,6 +92,9 @@ export const editPostData = (postData) => {
       const editData = async () => {
 
         const url = "https://jsonplaceholder.typicode.com/posts/" + postData.id;
+        console.log(postData);
+        console.log("URl is ");
+        console.log(url);
         const response = await fetch(
          url,
           {
