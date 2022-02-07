@@ -6,11 +6,11 @@ Project is implemented in React using Redux, Redux-toolkit, Java Script, and Thu
 
 For cross-origin requests (such as https://api.first.org/data/v1/countries), CORS Proxy is used. Heroku is used to send the proxy request. Below are the steps to use Heroku:
 
-git clone https://github.com/Rob--W/cors-anywhere.git
-cd cors-anywhere/
-npm install
-heroku create
-git push heroku master
+git clone https://github.com/Rob--W/cors-anywhere.git  
+cd cors-anywhere/  
+npm install  
+heroku create  
+git push heroku master  
 
 Then add the proxyURL to the actual URL. So, here the request becomes "https://limitless-shore-76329.herokuapp.com/https://api.first.org/data/v1/countries". 
 
