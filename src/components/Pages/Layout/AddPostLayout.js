@@ -31,13 +31,15 @@ const AddPostLayout = (props) => {
         userId: userIdValue,
         title: titleRef.current.value,
         id: idRef.current.value,
-        body: bodyRef.current.value,
+        body: bodyRef.current.value, 
+        
       };
     
       const onClickHandler = (props) => {
 
         if(editStateValue){
             console.log("I am here asking to submit the edit info in AddPostLayout");
+            console.log("The values of editInfo is " + Object.values(editInfo));
             dispatch(editPostData(editInfo));
         }
         else{
