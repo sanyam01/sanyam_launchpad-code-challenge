@@ -1,23 +1,20 @@
 import { Fragment } from "react";
 import { useSelector } from "react-redux";
-
+import Card from "../Layout/Card";
+import classes from "./PostalInfo.module.css";
 
 const PostalInfo = () => {
+  const postalData = useSelector((state) => state.postal.postalData);
 
-    const postalData = useSelector((state) => state.postal.postalData);
+  return (
+    <Fragment>
+      <h3> Area information</h3>
 
-    return (
-        <Fragment>
-            <p> This is the place for displaying the information</p>
-           
-
-            
-            <p> {JSON.stringify(postalData)}</p>
-           
-        </Fragment>
-
-    );
-
+      <Card>
+        <p className={ classes.post}> {JSON.stringify(postalData)}</p>
+      </Card>
+    </Fragment>
+  );
 };
 
 export default PostalInfo;
