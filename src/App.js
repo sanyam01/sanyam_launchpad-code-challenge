@@ -10,7 +10,6 @@ import Universities from "./components/Pages/Universities/Universities";
 let isInitial = true;
 
 function App() {
-
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
   const addPostState = useSelector((state) => state.addPosts.addPostState);
@@ -20,7 +19,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchPostData(null));
-  }, [dispatch, addPostState, editPostState]);
+  }, [dispatch]);
 
   useEffect(() => {}, [addPostState, editPostState]);
 
@@ -35,10 +34,9 @@ function App() {
     <Fragment>
       <div className="App">
         <Routes>
-          <Route path="/Universities" element={<Universities  />}/>
-           
+          <Route path="/Universities" element={<Universities />} />
 
-          <Route path="/"  element={<Home  />}/>
+          <Route path="/" element={<Home />} />
         </Routes>
       </div>
     </Fragment>
