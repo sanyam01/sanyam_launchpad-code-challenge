@@ -2,7 +2,7 @@
 
 Front-end Code Challenge by Launchpad By Vog.
 
-Project is implemented in React using Redux, Redux-toolkit, Java Script, and Thunk as a middleware. For implementing, clone the repo and install npm[npm install] and then run it.
+Project is implemented in React using Redux, Redux-toolkit, Java Script, and Thunk as a middleware. For implementing, clone the repo and install npm using: [npm install] and then run it.
 
 For cross-origin requests (such as https://api.first.org/data/v1/countries), CORS Proxy is used. Heroku is used to send the proxy request. Below are the steps to use Heroku:
 
@@ -16,7 +16,7 @@ Then add the proxyURL to the actual URL. So, here the request becomes "https://l
 
 This is used to fetch the country data.
 
-### Readme
+### Readme/Outputs
 
 This folder contains the screenshots for the front-end pages and the responses returned.
 
