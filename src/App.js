@@ -1,14 +1,15 @@
 import "./App.css";
+import React, { Fragment } from "react";
 import Home from "./components/Pages/Home/Home";
 import { Route, Routes } from "react-router-dom";
 import { fetchPostData } from "../src/store/post-actions";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
+import Universities from "./components/Pages/Universities/Universities";
 
 let isInitial = true;
 
 function App() {
-
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
   const addPostState = useSelector((state) => state.addPosts.addPostState);
@@ -17,11 +18,10 @@ function App() {
   console.log("I am in the start of application");
 
   useEffect(() => {
-    
     dispatch(fetchPostData(null));
-  }, [dispatch, addPostState, editPostState]);
+  }, [dispatch]);
 
-  useEffect(()=>{},[addPostState, editPostState]);
+  useEffect(() => {}, [addPostState, editPostState]);
 
   useEffect(() => {
     if (isInitial) {
@@ -31,23 +31,15 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <Home />
-      {/* <Routes>
-          <Route path = "home">
-            <Home/>
-          </Route>
+    <Fragment>
+      <div className="App">
+        <Routes>
+          <Route path="/Universities" element={<Universities />} />
 
-          <Route path = "/universities">
-            <p> This is the university page</p>
-          </Route>
-
-          <Route path = "/postalCodes">
-            <p> This is the postal code page</p>
-          </Route>
-
-        </Routes> */}
-    </div>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
+    </Fragment>
   );
 }
 
